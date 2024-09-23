@@ -1,0 +1,77 @@
+CREATE DATABASE HK_STOCKS;
+USE HK_STOCKS;
+
+CREATE TABLE USER (
+    ID INT,
+    User_name VARCHAR(50),
+    Email VARCHAR(60),
+    Registration_date DATE,
+    wallet_balance DECIMAL(10, 2),
+    wallet_status VARCHAR(10),
+    VIP BOOLEAN
+);
+
+
+INSERT INTO USER (ID, User_name, Email, Registration_date, wallet_balance, wallet_status, VIP) VALUES
+(1, 'Alice', 'alice@example.com', '2023-01-15', 150000.00, '活躍', TRUE),
+(2, 'Bob', 'bob@example.com', '2023-02-20', 75500.00, '活躍', FALSE),
+(3, 'Charlie', 'charlie@example.com', '2023-03-10', 25000.00, '活躍', FALSE),
+(4, 'David', 'david@example.com', '2023-04-05', 250250.00, '活躍', TRUE),
+(5, 'Eva', 'eva@example.com', '2023-05-22', 10500.00, '活躍', FALSE),
+(6, 'Frank', 'frank@example.com', '2023-06-12', 500100.00, '活躍', TRUE),
+(7, 'Grace', 'grace@example.com', '2023-07-07', 320750.00, '活躍', TRUE),
+(8, 'Helen', 'helen@example.com', '2023-08-15', 42000.00, '活躍', FALSE),
+(9, 'Ian', 'ian@example.com', '2023-09-01', 15000.00, '活躍', FALSE),
+(10, 'Jane', 'jane@example.com', '2023-09-10', 150000.00, '活躍', TRUE),
+(11, 'Kevin', 'kevin@example.com', '2023-09-15', 100000.00, '活躍', FALSE),
+(12, 'Lily', 'lily@example.com', '2023-09-20', 200000.00, '活躍', TRUE),
+(13, 'Mike', 'mike@example.com', '2023-09-25', 50000.00, '活躍', FALSE),
+(14, 'Nancy', 'nancy@example.com', '2023-09-30', 75000.00, '活躍', FALSE),
+(15, 'Oliver', 'oliver@example.com', '2023-10-05', 300000.00, '活躍', TRUE),
+(16, 'Pam', 'pam@example.com', '2023-10-10', 10000.00, '活躍', FALSE),
+(17, 'Quincy', 'quincy@example.com', '2023-10-15', 150000.00, '活躍', TRUE),
+(18, 'Rachel', 'rachel@example.com', '2023-10-20', 500500.00, '活躍', TRUE),
+(19, 'Steve', 'steve@example.com', '2023-10-25', 1000000.00, '活躍', TRUE),
+(20, 'Tina', 'tina@example.com', '2023-10-30', 200000.00, '活躍', FALSE),
+(21, 'Uma', 'uma@example.com', '2023-11-05', 60000.00, '活躍', FALSE),
+(22, 'Victor', 'victor@example.com', '2023-11-10', 85000.00, '活躍', FALSE),
+(23, 'Wendy', 'wendy@example.com', '2023-11-15', 110000.00, '活躍', TRUE),
+(24, 'Xander', 'xander@example.com', '2023-11-20', 130000.00, '活躍', FALSE),
+(25, 'Yvonne', 'yvonne@example.com', '2023-11-25', 95000.00, '活躍', FALSE);
+-- 創建 STOCKS 表
+CREATE TABLE STOCKS (
+    Stock_num INT,
+    Company_name VARCHAR(50),
+    Price DECIMAL(11, 2),
+    Circulation INT,
+    Listing_date DATE
+);
+
+-- 插入數據到 STOCKS 表
+INSERT INTO STOCKS (Stock_num, Company_name, Price, Circulation, Listing_date) VALUES
+(00001, '長江實業集團', 56.50, 2000000, '1972-02-08'),
+(00002, '中電控股', 84.00, 1500000, '1990-11-26'),
+(00003, '香港中華煤氣', 12.20, 3500000, '1862-10-01'),
+(00004, '騰訊控股', 500.00, 10000000, '2004-06-16'),
+(00005, '匯豐控股', 57.80, 8000000, '1865-08-01'),
+(00006, '香港交易所', 360.00, 1000000, '2000-04-05'),
+(00007, '龍湖地產', 29.80, 4000000, '2009-12-03'),
+(00008, '信和置業', 14.50, 2500000, '1972-05-04'),
+(00009, '中國海外發展', 25.00, 3600000, '1976-08-24'),
+(10, '中國神華', 18.30, 6000000, '2007-05-08'),
+(11, '中國平安', 64.30, 5000000, '2007-10-08'),
+(12, '中國建設銀行', 5.50, 20000000, '2005-10-27'),
+(13, '中國移動', 48.00, 5000000, '1997-10-23'),
+(14, '中國聯通', 5.50, 10000000, '2000-10-10'),
+(15, '中國電信', 3.70, 11000000, '2006-10-09'),
+(16, '中國鐵建', 7.50, 7500000, '2009-10-15'),
+(17, '中國中鐵', 8.40, 10000000, '2007-10-15'),
+(18, '中國海洋石油', 10.50, 9000000, '2000-04-27'),
+(19, '中國石化', 6.80, 20000000, '2000-04-27'),
+(20, '中信股份', 15.00, 4000000, '2008-12-01'),
+(21, '中國人壽', 12.70, 8500000, '2009-10-15'),
+(22, '中國太平', 30.00, 4800000, '2016-06-30'),
+(23, '中國南方航空', 6.20, 5500000, '2004-12-15'),
+(24, '中國國航', 9.50, 6300000, '2004-12-15'),
+(25, '中國交通建設', 6.40, 9800000, '2009-10-15');
+SELECT * FROM STOCKS;
