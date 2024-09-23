@@ -1,8 +1,8 @@
 CREATE DATABASE HK_STOCKS;
 USE HK_STOCKS;
-
+-- 創建 USER 表
 CREATE TABLE USER (
-    ID INT,
+    ID INT primary KEY,
     User_name VARCHAR(50),
     Email VARCHAR(60),
     Registration_date DATE,
@@ -11,36 +11,37 @@ CREATE TABLE USER (
     VIP BOOLEAN
 );
 
+-- 插入數據到 USER 表
+INSERT INTO USER (ID , User_name, Email, Registration_date, wallet_balance, wallet_status, VIP) VALUES
+(1, 'Alice', 'alice@example.com', '2023-01-15', 150000.00, 'Y', TRUE),
+(2, 'Bob', 'bob@example.com', '2023-02-20', 75500.00, 'Y', FALSE),
+(3, 'Charlie', 'charlie@example.com', '2023-03-10', 25000.00, 'Y', FALSE),
+(4, 'David', 'david@example.com', '2023-04-05', 250250.00, 'Y', TRUE),
+(5, 'Eva', 'eva@example.com', '2023-05-22', 10500.00, 'Y', FALSE),
+(6, 'Frank', 'frank@example.com', '2023-06-12', 500100.00, 'Y', TRUE),
+(7, 'Grace', 'grace@example.com', '2023-07-07', 320750.00, 'Y', TRUE),
+(8, 'Helen', 'helen@example.com', '2023-08-15', 42000.00, 'Y', FALSE),
+(9, 'Ian', 'ian@example.com', '2023-09-01', 15000.00, 'Y', FALSE),
+(10, 'Jane', 'jane@example.com', '2023-09-10', 150000.00, 'Y', TRUE),
+(11, 'Kevin', 'kevin@example.com', '2023-09-15', 100000.00, 'Y', FALSE),
+(12, 'Lily', 'lily@example.com', '2023-09-20', 200000.00, 'Y', TRUE),
+(13, 'Mike', 'mike@example.com', '2023-09-25', 50000.00, 'Y', FALSE),
+(14, 'Nancy', 'nancy@example.com', '2023-09-30', 75000.00, 'Y', FALSE),
+(15, 'Oliver', 'oliver@example.com', '2023-10-05', 300000.00, 'Y', TRUE),
+(16, 'Pam', 'pam@example.com', '2023-10-10', 10000.00, 'Y', FALSE),
+(17, 'Quincy', 'quincy@example.com', '2023-10-15', 150000.00, 'Y', TRUE),
+(18, 'Rachel', 'rachel@example.com', '2023-10-20', 500500.00, 'Y', TRUE),
+(19, 'Steve', 'steve@example.com', '2023-10-25', 1000000.00, 'Y', TRUE),
+(20, 'Tina', 'tina@example.com', '2023-10-30', 200000.00, 'Y', FALSE),
+(21, 'Uma', 'uma@example.com', '2023-11-05', 60000.00, 'Y', FALSE),
+(22, 'Victor', 'victor@example.com', '2023-11-10', 85000.00, 'Y', FALSE),
+(23, 'Wendy', 'wendy@example.com', '2023-11-15', 110000.00, 'Y', TRUE),
+(24, 'Xander', 'xander@example.com', '2023-11-20', 130000.00, 'Y', FALSE),
+(25, 'Yvonne', 'yvonne@example.com', '2023-11-25', 95000.00, 'Y', FALSE);
 
-INSERT INTO USER (ID, User_name, Email, Registration_date, wallet_balance, wallet_status, VIP) VALUES
-(1, 'Alice', 'alice@example.com', '2023-01-15', 150000.00, '活躍', TRUE),
-(2, 'Bob', 'bob@example.com', '2023-02-20', 75500.00, '活躍', FALSE),
-(3, 'Charlie', 'charlie@example.com', '2023-03-10', 25000.00, '活躍', FALSE),
-(4, 'David', 'david@example.com', '2023-04-05', 250250.00, '活躍', TRUE),
-(5, 'Eva', 'eva@example.com', '2023-05-22', 10500.00, '活躍', FALSE),
-(6, 'Frank', 'frank@example.com', '2023-06-12', 500100.00, '活躍', TRUE),
-(7, 'Grace', 'grace@example.com', '2023-07-07', 320750.00, '活躍', TRUE),
-(8, 'Helen', 'helen@example.com', '2023-08-15', 42000.00, '活躍', FALSE),
-(9, 'Ian', 'ian@example.com', '2023-09-01', 15000.00, '活躍', FALSE),
-(10, 'Jane', 'jane@example.com', '2023-09-10', 150000.00, '活躍', TRUE),
-(11, 'Kevin', 'kevin@example.com', '2023-09-15', 100000.00, '活躍', FALSE),
-(12, 'Lily', 'lily@example.com', '2023-09-20', 200000.00, '活躍', TRUE),
-(13, 'Mike', 'mike@example.com', '2023-09-25', 50000.00, '活躍', FALSE),
-(14, 'Nancy', 'nancy@example.com', '2023-09-30', 75000.00, '活躍', FALSE),
-(15, 'Oliver', 'oliver@example.com', '2023-10-05', 300000.00, '活躍', TRUE),
-(16, 'Pam', 'pam@example.com', '2023-10-10', 10000.00, '活躍', FALSE),
-(17, 'Quincy', 'quincy@example.com', '2023-10-15', 150000.00, '活躍', TRUE),
-(18, 'Rachel', 'rachel@example.com', '2023-10-20', 500500.00, '活躍', TRUE),
-(19, 'Steve', 'steve@example.com', '2023-10-25', 1000000.00, '活躍', TRUE),
-(20, 'Tina', 'tina@example.com', '2023-10-30', 200000.00, '活躍', FALSE),
-(21, 'Uma', 'uma@example.com', '2023-11-05', 60000.00, '活躍', FALSE),
-(22, 'Victor', 'victor@example.com', '2023-11-10', 85000.00, '活躍', FALSE),
-(23, 'Wendy', 'wendy@example.com', '2023-11-15', 110000.00, '活躍', TRUE),
-(24, 'Xander', 'xander@example.com', '2023-11-20', 130000.00, '活躍', FALSE),
-(25, 'Yvonne', 'yvonne@example.com', '2023-11-25', 95000.00, '活躍', FALSE);
 -- 創建 STOCKS 表
 CREATE TABLE STOCKS (
-    Stock_num INT,
+    Stock_num INT primary key,
     Company_name VARCHAR(50),
     Price DECIMAL(11, 2),
     Circulation INT,
@@ -79,3 +80,8 @@ SELECT * FROM USER;
 SELECT * FROM USER WHERE VIP IS FALSE;
 SELECT * FROM STOCKS WHERE Listing_date > '2004-12-15';
 SELECT * FROM STOCKS WHERE Listing_date < '2004-12-15' AND PRICE > 10;
+SELECT * FROM STOCKS ORDER BY Circulation;
+
+DROP TABLE USER;
+DROP TABLE STOCKS;
+
