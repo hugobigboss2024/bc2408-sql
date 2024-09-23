@@ -75,3 +75,7 @@ INSERT INTO STOCKS (Stock_num, Company_name, Price, Circulation, Listing_date) V
 (24, '中國國航', 9.50, 6300000, '2004-12-15'),
 (25, '中國交通建設', 6.40, 9800000, '2009-10-15');
 SELECT * FROM STOCKS;
+SELECT * FROM USER;
+SELECT * FROM USER WHERE VIP IS FALSE;
+SELECT * FROM STOCKS WHERE Listing_date > '2004-12-15';
+SELECT * FROM STOCKS WHERE Listing_date < '2004-12-15' AND PRICE > 10;
