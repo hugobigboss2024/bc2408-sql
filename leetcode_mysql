@@ -9,3 +9,31 @@ SELECT
 -- 类似于上面的统计，但这里计算的是不同的 partner_id（合作伙伴ID）的数量。
 FROM DailySales
 GROUP BY 1, 2;
+
+--1741
+select event_day as day, emp_id, sum( out_time - in_time) as total_time
+-- out_time 和 in_time 是表中的两个列，分别表示员工的下班时间和上班时间。
+-- out_time - in_time 计算每个员工在每个事件日的工作时长（假设时间格式是可以直接相减的，例如 DATETIME 或 TIME 类型）。
+-- SUM(...) 函数会对每个员工在特定日期的工作时长进行求和
+from Employees
+group by event_day, emp_id;
+
+-- 1890
+select user_id, max(time_stamp) as last_stamp
+from Logins 
+where time_stamp like '2020%'
+--where time_stamp between '2020-01-01 00:00:00' and '2020-12-31 23:59:59' --more good
+group by user_id;
+
+--1484
+select sell_date, 
+count(distinct product) as num_sold, 
+-- COUNT(DISTINCT product) 计算在每个销售日期中不同产品的数量。使用 DISTINCT 确保同一天内相同产品不会被重复计数。
+group_concat(distinct product)  as products
+-- group_concat(distinct product order by product) as products -- more good
+-- GROUP_CONCAT(DISTINCT product) 函数将同一天内所有不同的产品名称连接成一个字符串，使用逗号（或其他分隔符）分隔。
+from Activities
+group by sell_date;
+-- group by sell_date; --more good
+
+--
