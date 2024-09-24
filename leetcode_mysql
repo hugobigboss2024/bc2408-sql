@@ -1,0 +1,11 @@
+-- 1693
+SELECT 
+    date_id, 
+    make_name, 
+--DISTINCT 是一个关键字，用于从查询结果中返回唯一（不同）的值。它的主要作用是消除结果集中的重复记录，从而确保返回的结果集只包含唯一的值。
+    COUNT(DISTINCT lead_id) AS unique_leads, 
+-- 计算每个组中不同的 lead_id（潜在客户ID）的数量。使用 DISTINCT 确保每个潜在客户只被计算一次，以避免重复计算。
+    COUNT(DISTINCT partner_id) AS unique_partners
+-- 类似于上面的统计，但这里计算的是不同的 partner_id（合作伙伴ID）的数量。
+FROM DailySales
+GROUP BY 1, 2;
